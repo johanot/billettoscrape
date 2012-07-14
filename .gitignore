@@ -1,6 +1,8 @@
-.ipr
-.iml
-.iwl
-.log
-.idea
+*.ipr
+*.iml
+*.iwl
+*.iws
+*.log
+*.idea
+*~
 target
