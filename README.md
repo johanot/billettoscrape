@@ -5,7 +5,7 @@ Så.. Fik jeg pakket den.. Og den kan findes på Github: https://github.com/joha
 
 Og i bin-folderen, ligger en samlet JAR-fil. Kan køres med:
 
-java -jar BillettoScrape-0.01-SNAPSHOT.jar <brugernavn-til-billetto> <passwd-til-billetto> <eventnavn>
+java -jar BillettoScrape-0.01-SNAPSHOT.jar brugernavn-til-billetto passwd-til-billetto eventnavn
 
 Det kræver dog lige at Google Chrome er installeret samt ChromeDriver: http://code.google.com/p/chromedriver/downloads/list
 
