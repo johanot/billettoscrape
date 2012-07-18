@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.IOException;
+
 /**
  * User: jot
  * Date: 6/16/12
@@ -29,6 +31,8 @@ public class BillettoScrape {
         billettoScrape.initDriver();
         billettoScrape.login(args[0], args[1]);
         billettoScrape.downloadFile(args[2]);
+
+        System.exit(0);
     }
 
 
@@ -59,9 +63,11 @@ public class BillettoScrape {
 		try
 		{
 			Thread.sleep(10000);
-		} catch (InterruptedException e) { }
-		
+
 		driver.close();
+        driver.quit();
+
+        } catch (InterruptedException e) {   }
     }
 
 }
