@@ -55,6 +55,13 @@ public class BillettoScrape {
     private void downloadFile(String event) {
         String eventListDownloadLink = "http://www.billetto.dk/da/events/" + event + "/list.csv?listtype=guestlist";
         driver.navigate().to(eventListDownloadLink);
+		
+		try
+		{
+			Thread.sleep(10000);
+		} catch (InterruptedException e) { }
+		
+		driver.close();
     }
 
 }
