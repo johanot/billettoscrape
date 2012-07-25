@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintStream;
 
 /**
  * User: jot
@@ -30,6 +32,7 @@ public class BillettoScrape {
         BillettoScrape billettoScrape = new BillettoScrape();
         billettoScrape.initDriver();
         billettoScrape.login(args[0], args[1]);
+		billettoScrape.saveOverview(args[2]);
         billettoScrape.downloadFile(args[2]);
 
         System.exit(0);
@@ -53,6 +56,20 @@ public class BillettoScrape {
 
         driver.findElement(new By.ById("login_user")).click();
         selenium.waitForPageToLoad("2000");
+    }
+
+    private void saveOverview(String event) {
+
+        String eventOverviewLink = "http://www.billetto.dk/da/events/" + event + "/overview";
+        driver.navigate().to(eventOverviewLink);
+
+        try {
+            PrintStream ps = new PrintStream(event + ".html");
+            ps.print(selenium.getHtmlSource());
+            ps.close(); selenium.
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
